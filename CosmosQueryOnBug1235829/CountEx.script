@@ -1,0 +1,15 @@
+﻿//Script GUID:cbee6cc1-6527-4b66-b5fa-27e47b3b692f
+//Used for tracking history
+ulsStream = SSTREAM "shares/WacStructured.prod/local/structured/uls_by_tag/?date=2014-07-30...2014-08-01";
+
+search = 
+    SELECT MyHelper.DateTimeToQuanta(TimeStamp) AS Quanta
+    FROM ulsStream;
+
+count = 
+    SELECT COUNT(*) AS countNum
+    FROM search;
+
+OUTPUT count
+TO SSTREAM "/local/shuywang/output.ss"
+WITH STREAMEXPIRY "1";

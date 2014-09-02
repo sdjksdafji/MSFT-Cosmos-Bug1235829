@@ -26,9 +26,13 @@
     <OutputPath>bin\Release\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <Script Include="Scope.script" />
-    <ScriptCode Include="Scope.script.cs">
-      <DependentUpon>Scope.script</DependentUpon>
+    <Script Include="CountEx.script" />
+    <Script Include="Query.script" />
+    <ScriptCode Include="CountEx.script.cs">
+      <DependentUpon>CountEx.script</DependentUpon>
+    </ScriptCode>
+    <ScriptCode Include="Query.script.cs">
+      <DependentUpon>Query.script</DependentUpon>
     </ScriptCode>
   </ItemGroup>
   <Import Project="$(AppData)\Microsoft\ScopeStudio\MsBuild\1.0\Scope.targets" />
